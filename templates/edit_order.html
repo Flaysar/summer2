@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Добавить заказ</h2>
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <p>
+      {{ form.description.label }}<br>
+      {{ form.description(size=32) }}<br>
+    </p>
+    <p>
+      {{ form.customer_id.label }}<br>
+      {{ form.customer_id() }}<br>
+    </p>
+    <p>
+      {{ form.job_id.label }}<br>
+      {{ form.job_id() }}<br>
+    </p>
+    <p>
+      {{ form.worker_id.label }}<br>
+      {{ form.worker_id() }}<br>
+    </p>
+    <p>
+      {{ form.status.label }}<br>
+      {{ form.status() }}<br>
+    </p>
+    <p>{{ form.submit() }}</p>
+  </form>
+{% endblock %}

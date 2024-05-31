@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Работы</h2>
+  <a href="{{ url_for('add_job') }}">Добавить работу</a>
+  <ul>
+    {% for job in jobs %}
+      <li>{{ job.description }}. Стоимость: {{ job.price }} рублей. Время работы: {{ job.duration }} минут.
+        <a href="{{ url_for('edit_job', id=job.id) }}">Редактировать</a>
+        <form action="{{ url_for('delete_job', id=job.id) }}" method="POST" style="display:inline;">
+          <button type="submit">Удалить</button>
+        </form>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

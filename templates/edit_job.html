@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Добавить работу</h2>
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <p>
+      {{ form.description.label }}<br>
+      {{ form.description(size=32) }}<br>
+    </p>
+    <p>
+      {{ form.price.label }}<br>
+      {{ form.price(size=32) }}<br>
+    </p>
+    <p>
+      {{ form.duration.label }}<br>
+      {{ form.duration(size=32) }}<br>
+    </p>
+    <p>{{ form.submit() }}</p>
+  </form>
+{% endblock %}
